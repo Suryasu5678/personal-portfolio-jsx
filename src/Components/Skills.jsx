@@ -29,13 +29,11 @@ function Skills() {
       style={{
         minHeight: "calc(100vh - 10vh)",
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
         padding: "2rem",
         backgroundColor: "#0d1117",
         color: "white",
         height: "100%",
-        position: "relative",
       }}
     >
       <ul
@@ -50,28 +48,30 @@ function Skills() {
         }}
       >
         {skills.map((skill, index) => (
-          <li
+          <button
             key={index}
             style={{
               background: "white",
               padding: "1rem 2rem",
-              borderRadius: "10px",
+              borderRadius: "5px",
               boxShadow: "0 10px 20px rgba(0, 0, 0, 0.3)",
               transition:
                 "transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease",
               cursor: "pointer",
               fontSize: "1.25rem",
               fontWeight: "600",
-              textAlign: "center",
-              flex: "0 1 150px",
-              maxWidth: "250px", // Increased max width for better appearance
+              maxWidth: "250px",
               color: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              border:'none'
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = "scale(1.1)";
               e.target.style.boxShadow = "0 15px 25px rgba(255, 165, 0, 0.6)";
-              e.target.style.backgroundColor = "#FF5733"; // Orange background on hover
-              e.target.style.color = "white"; // Text color change on hover
+              e.target.style.backgroundColor = "#FF5733";
+              e.target.style.color = "white";
             }}
             onMouseLeave={(e) => {
               e.target.style.transform = "scale(1)";
@@ -81,7 +81,7 @@ function Skills() {
             }}
           >
             {skill}
-          </li>
+          </button>
         ))}
       </ul>
     </section>
